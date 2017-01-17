@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color: #000000">
+  <script type="text/javascript">
+    var content = document.getElementById('content');
+    var w = document.getElementById('w');
+     //var socket = new WebSocket('ws://192.168.178.49:1337');
+    var socket = new WebSocket('ws://minibian:1337');
+    socket.onopen = function() {
+      socket.send("Test");
+    };
+
+    socket.push = function(msg) {
+      var o = {
+        text: msg
+      };
+      socket.send(JSON.stringify({
+        type: 'Message',
+        data: msg
+      }));
+    }
+
+    socket.onmessage = function(message) {
+      //jv.value = message.data ;
+      var o = JSON.parse(message.data);
+      if (o.type == "SensorTherm") {
+        var dt = new Date(o.data.time);
+        var day = ('0' + dt.getDate()).slice(-2);
+        var month = ('0' + (dt.getMonth() + 1)).slice(-2);
+        var year = dt.getFullYear();
+        var hour = ('0' + dt.getHours()).slice(-2);
+        var minute = ('0' + dt.getMinutes()).slice(-2);
+        var second = ('0' + dt.getSeconds()).slice(-2);
+        //z.innerHTML = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+        if (o.data.sensor == "Zentrale") {
+          var sZeit = document.getElementById('z_'+o.data.sensor);
+          sZeit.innerHTML = day + '.' + month + '.' + year + '<br>' + hour + ':' + minute + ':' + second;
+        }
+        var sSensor = document.getElementById('zv_'+o.data.sensor);
+        sSensor.innerHTML = o.data.sensor;
+        var sTemp = document.getElementById('temp_'+o.data.sensor);
+        sTemp.innerHTML = o.data.temp + ' \xB0C';
+        var sHum = document.getElementById('hum_'+o.data.sensor);
+        sHum.innerHTML = o.data.humidity + ' %';
+      } else if (o.type == "Sonos") {
+        son.innerHTML = '<img src="' + o.data.aa + '">';
+        sont.innerHTML = o.data.a + '<br>' + o.data.t;
+      }
+    };
+
+    socket.onerror = function(error) {
+      console.log('WebSocket error: ' + error);
+    };
+  </script>
+
+    <div id="Ueberschrift" class="Ueberschrift" style="z-index:1;left: 20px;top: 32px;position: absolute;height: 50px;width: 1000px">
+        Dirks SmartHome Zentrale
+    </div>
+    <div id="z_Zentrale" class="Zeit" style="z-index:1;left: 20px;top: 100px;position: absolute;height: 50px;width: 250px">
+        TTT
+    </div>
+    <div id="zv_Zentrale" class="Zimmer" style="z-index:1;left: 20px;top: 180px;position: absolute;height: 30px;width: 250px">
+        TTT
+    </div>
+    <div id="temp_Zentrale" class="Werte" style="z-index:1;left: 20px;top: 221px;position: absolute;height: 40px;width: 120px">
+        TTT
+    </div>
+    <div id="hum_Zentrale" class="Werte" style="z-index:1;left: 150px;top: 221px;position: absolute;height: 40px;width: 120px">
+        TTT
+    </div>
+    <div id="son" class="Cover" style="z-index:1;left: 300px;top: 100px;position: absolute;height: 400px;width: 400px">
+        TTT
+    </div>
+  </div>
+  <div id="sont" class="Zeit" style="z-index:1;left: 300px;top: 510px;position: absolute;height: 50px;width: 400px">
+      TTT
+  </div>
+</body>
+</html>

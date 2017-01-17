@@ -1,0 +1,74 @@
+body {
+}
+.Ueberschrift {
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #000000;
+    border: 2px solid #FFFFFF;
+}
+
+.Werte {
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+    padding: 5px;
+}
+
+.Zeit {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+    padding: 5px;
+}
+
+.Cover {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #000000;
+    padding: 5px;
+}
+
+.Zimmer {
+    font-family: Roboto;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+    padding: 5px;
+}

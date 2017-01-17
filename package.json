@@ -1,0 +1,20 @@
+{
+  "name": "dht11",
+  "version": "1.0.0",
+  "description": "Temperatur mit DHT11 messen",
+  "main": "temp.js",
+  "dependencies": {
+    "node-dht-sensor": "^0.0.32",
+    "websocket": "^1.0.23"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dht11",
+    "node"
+  ],
+  "author": "Dirk Lange",
+  "license": "ISC"
+}
