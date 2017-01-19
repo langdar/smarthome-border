@@ -1,3 +1,6 @@
+/*
+websocket Client für den ESP8266 zum Messen der Temperatur mit einem DS18x20
+*/
 #include <ESP8266WiFi.h>
 #include <WebSocketClient.h>
 #include <OneWire.h>
@@ -77,13 +80,14 @@ void setup() {
 void loop() {
   String data;
   float temperature = 0;
-  byte humidity = -1;
+  int humidity = -1;
 
   sensors.requestTemperatures();
   temperature = sensors.getTempCByIndex(0);
   Serial.println("Sample OK: ");
   Serial.println(temperature); Serial.print(" *C, "); 
-  Serial.print((int)-1); Serial.println(" %");
+  //Reste der DHT11-Implementierung
+  Serial.println((int)-1); Serial.println(" %");
 
   if (client.connected()) {
     webSocketClient.getData(data);
