@@ -5,7 +5,7 @@ extern "C" {
 }
  
 const char* ssid = "FRITZ!Box 7490";
-const char* password = "StarTrek'07052004";
+const char* password = "xxx";
 char wiFiHostname[ ] = "ESPBalkon";
 char path[] = "/";
 char host[] = "echo.websocket.org";
