@@ -1,0 +1,2 @@
+C:\Users\dirlange\Source\Repos\smarthome-border\obj\Debug\NodejsApp1.njsprojResolveAssemblyReference.cache
+C:\Users\dirlange\Source\Repos\smarthome-border\bin\Microsoft.NodejsTools.WebRole.dll

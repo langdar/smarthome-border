@@ -18,7 +18,9 @@ var colors = [ 'red', 'green', 'blue', 'mangenta', 'purple', 'plum', 'orange'];
 colors.sort(function(a,b) { return Math.random() > 0.5; });
 
 var socket = new server({
-    httpServer: http.createServer().listen(1337)
+    httpServer: http.createServer().listen(1337, function () {
+        console.log((new Date()) + ' Server started on port 1337 and waiting for connections...');
+    })
 });
 
 socket.on('request', function(request) {
