@@ -1,14 +1,51 @@
 var server = require('websocket').server, http = require('http');
 var history = [ ];
 var clients = [ ];
-/*var r = require('rethinkdb');
+var r = require('rethinkdb');
+var db_da = false;
 
+/**
+ * Verbinden wir uns doch erst mal zur Rethinkdb-Instanz auf localhost
+ * Wenn das geht, schreiben wir später alle Daten da rein und holen uns den aktuellsten wert jeweils aus der Datenbank
+ * sonst geben wir alles direkt weiter
+ */
 var rcon = null;
 r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
-    if (err) throw err;
-    rcon = conn;
+    if (err) {
+        console.log('Keine Datenbank gestartet, wir arbeiten ohne...');
+    } else {
+        console.log('Connected to rethinkdb@localhost');
+        rcon = conn;
+        /*Wenn unsere Datenbank da ist, ist alles gut, sonst wird sie angelegt*/
+        r.dbList().contains('SmartHome')
+            .do(function (databaseExists) {
+                return r.branch(
+                    databaseExists,
+                    { dbs_created: 0 },
+                    r.dbCreate('SmartHome')
+                );
+            }).run(rcon, function (err, result) {
+                if (err) throw err;
+                //console.log(JSON.stringify(result, null, 2));
+            });
+        /*Wenn unsere Temperaturtabelle da ist, ist alles gut, sonst wird sie angelegt*/
+        r.db('SmartHome').tableList().contains('Temps')
+            .do(function (tableExists) {
+                return r.branch(
+                    tableExists,
+                    { dbs_created: 0 },
+                    r.db('SmartHome').tableCreate('Temps')
+                );
+            }).run(rcon, function (err, result) {
+                if (err) throw err;
+                //console.log(JSON.stringify(result, null, 2));
+            });
+        db_da = true;
+        console.log('Wir arbeiten mit ner Datenbank :-)');
+    }
 });
-*/
+
+
 
 function htmlEntities(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -42,8 +79,8 @@ socket.on('request', function(request) {
           } else {
             //console.log(message.utf8Data);
             var o = JSON.parse(message.utf8Data);
-            console.log(o.type);
-            console.log(o);
+            console.log((new Date()) + o.type);
+            //console.log(o);
             if (o.type == "Message") {
               var obj = {
                 time: (new Date()).getTime(),
@@ -56,21 +93,35 @@ socket.on('request', function(request) {
                 clients[i].sendUTF(json);
               }
             } else if (o.type == "SensorTherm") {
-              var json = JSON.stringify({type: 'SensorTherm', data: o.data});
-              /*r.db('SmartHome').table('Temps').insert(o).run(rcon, function(err, result) {
-                if (err) throw err;
-                  //console.log(JSON.stringify(result, null, 2));
-              });*/
-              for (var i=0; i < clients.length; i++) {
-                clients[i].sendUTF(json);
-              }
-              console.log("Sensordata send");
+                var json = JSON.stringify({ type: 'SensorTherm', data: o.data });
+                if (db_da) {
+                    r.db('SmartHome').table('Temps').insert(o).run(rcon, function (err, result) {
+                        if (err) throw err;
+                        //console.log(JSON.stringify(result, null, 2));
+                    });
+                }
+                for (var i=0; i < clients.length; i++) {
+                    clients[i].sendUTF(json);
+                }
+                console.log("Sensordata send");
             } else if (o.type == "Sonos") {
-              var json = JSON.stringify({type: 'Sonos', data: o.data});
-              for (var i=0; i < clients.length; i++) {
-                clients[i].sendUTF(json);
-              }
-              console.log("Sonos data send...");
+                var json = JSON.stringify({type: 'Sonos', data: o.data});
+                for (var i=0; i < clients.length; i++) {
+                    clients[i].sendUTF(json);
+                }
+                console.log("Sonos data send...");
+            } else if (o.type == "Fake") {
+                var json = JSON.stringify({ type: 'Fake', data: o.data });
+                if (db_da) {
+                    r.db('SmartHome').table('Temps').insert(o).run(rcon, function (err, result) {
+                        if (err) throw err;
+                        //console.log(JSON.stringify(result, null, 2));
+                    });
+                }
+                for (var i = 0; i < clients.length; i++) {
+                    clients[i].sendUTF(json);
+                }
+                console.log("Fake data send");
             }
           }
         }

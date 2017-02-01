@@ -1,0 +1,116 @@
+2017-01-31T11:32:40.918875600 0.012008s notice: In recursion: removing file 'C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data\\tmp'
+2017-01-31T11:32:40.918875601 0.013077s warn: Trying to delete non-existent file 'C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data\\tmp'
+2017-01-31T11:32:40.918875602 0.014226s notice: Initializing directory C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data
+2017-01-31T11:32:40.918875603 0.015333s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory 'C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data' did not already exist or is empty.)
+2017-01-31T11:32:40.918875604 0.015585s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2017-01-31T11:32:40.918875605 0.015716s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2017-01-31T11:32:40.918875606 0.015828s notice: Loading data from directory C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data
+2017-01-31T11:32:41.084515100 0.171395s info: Automatically using cache size of 4001 MB
+2017-01-31T11:32:41.086036100 0.174602s notice: Listening for intracluster connections on port 29015
+2017-01-31T11:32:41.086036101 0.175960s notice: Listening for client driver connections on port 28015
+2017-01-31T11:32:41.086036102 0.176120s notice: Listening for administrative HTTP connections on port 8080
+2017-01-31T11:32:41.086036103 0.176122s notice: Listening on cluster address: 127.0.0.1
+2017-01-31T11:32:41.086036104 0.176123s notice: Listening on driver address: 127.0.0.1
+2017-01-31T11:32:41.086036105 0.176124s notice: Listening on http address: 127.0.0.1
+2017-01-31T11:32:41.086036106 0.176124s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-01-31T11:32:41.086036107 0.176126s notice: Server ready, "OSP3355_ljd" 55770e3f-e00e-4cfc-b6a9-259adce3a509
+2017-01-31T11:40:47.461481500 486.548208s notice: Server got Control-C; shutting down...
+2017-01-31T11:40:47.461481501 486.548418s notice: Shutting down client connections...
+2017-01-31T11:40:47.461481502 486.548549s notice: All client connections closed.
+2017-01-31T11:40:47.461481503 486.548552s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-01-31T11:40:47.461481504 486.549267s notice: Storage engine shut down.
+2017-01-31T11:42:14.151442400 0.012610s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2017-01-31T11:42:14.151442401 0.012796s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2017-01-31T11:42:14.151442402 0.012899s notice: Loading data from directory C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data
+2017-01-31T11:42:14.151442403 0.022137s info: Automatically using cache size of 4005 MB
+2017-01-31T11:42:14.151442404 0.024803s notice: Listening for intracluster connections on port 29015
+2017-01-31T11:42:14.151442405 0.025956s notice: Listening for client driver connections on port 28015
+2017-01-31T11:42:14.151442406 0.026099s notice: Listening for administrative HTTP connections on port 8080
+2017-01-31T11:42:14.151442407 0.026101s notice: Listening on cluster address: 127.0.0.1
+2017-01-31T11:42:14.151442408 0.026101s notice: Listening on driver address: 127.0.0.1
+2017-01-31T11:42:14.151442409 0.026102s notice: Listening on http address: 127.0.0.1
+2017-01-31T11:42:14.151442410 0.026103s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-01-31T11:42:14.151442411 0.026104s notice: Server ready, "OSP3355_ljd" 55770e3f-e00e-4cfc-b6a9-259adce3a509
+2017-01-31T12:41:33.707492900 3559.559900s notice: Server got Close (End Task) Event; shutting down...
+2017-01-31T12:41:54.210555701 0.011470s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2017-01-31T12:41:54.210555702 0.011694s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2017-01-31T12:41:54.210555703 0.011839s notice: Loading data from directory C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data
+2017-01-31T12:41:54.226186000 0.021349s info: Automatically using cache size of 3814 MB
+2017-01-31T12:41:54.241849500 0.038357s notice: Listening for intracluster connections on port 29015
+2017-01-31T12:41:54.241849501 0.039503s notice: Listening for client driver connections on port 28015
+2017-01-31T12:41:54.241849502 0.039685s notice: Listening for administrative HTTP connections on port 8080
+2017-01-31T12:41:54.241849503 0.039686s notice: Listening on cluster address: 127.0.0.1
+2017-01-31T12:41:54.241849504 0.039687s notice: Listening on driver address: 127.0.0.1
+2017-01-31T12:41:54.241849505 0.039687s notice: Listening on http address: 127.0.0.1
+2017-01-31T12:41:54.241849506 0.039689s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-01-31T12:41:54.241849507 0.039689s notice: Server ready, "OSP3355_ljd" 55770e3f-e00e-4cfc-b6a9-259adce3a509
+2017-01-31T12:41:57.532647600 3.321680s notice: Server got Control-C; shutting down...
+2017-01-31T12:41:57.532647601 3.321805s notice: Shutting down client connections...
+2017-01-31T12:41:57.532647602 3.321861s notice: All client connections closed.
+2017-01-31T12:41:57.532647603 3.321862s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-01-31T12:41:57.533649700 3.322152s notice: Storage engine shut down.
+2017-01-31T12:42:01.078999100 0.011098s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2017-01-31T12:42:01.078999101 0.011261s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2017-01-31T12:42:01.079994300 0.012318s notice: Loading data from directory C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data
+2017-01-31T12:42:01.089018300 0.021230s info: Automatically using cache size of 3817 MB
+2017-01-31T12:42:01.092049800 0.024476s notice: Listening for intracluster connections on port 29015
+2017-01-31T12:42:01.093029900 0.025922s notice: Listening for client driver connections on port 28015
+2017-01-31T12:42:01.093029901 0.026098s notice: Listening for administrative HTTP connections on port 8080
+2017-01-31T12:42:01.094033200 0.026437s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-01-31T12:42:01.094033201 0.026940s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-01-31T12:42:01.095036200 0.027215s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-01-31T12:42:01.095036201 0.027217s notice: Server ready, "OSP3355_ljd" 55770e3f-e00e-4cfc-b6a9-259adce3a509
+2017-01-31T12:48:29.623110900 388.562661s notice: Server got Control-C; shutting down...
+2017-01-31T12:48:29.623110901 388.562914s notice: Shutting down client connections...
+2017-01-31T12:48:29.623110902 388.563166s notice: All client connections closed.
+2017-01-31T12:48:29.623110903 388.563170s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-01-31T12:48:29.623110904 388.563685s notice: Storage engine shut down.
+2017-01-31T12:48:40.024516200 0.011735s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2017-01-31T12:48:40.025530500 0.011894s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2017-01-31T12:48:40.026522100 0.013209s notice: Loading data from directory C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data
+2017-01-31T12:48:40.032570800 0.023202s info: Automatically using cache size of 3818 MB
+2017-01-31T12:48:40.032570801 0.026402s notice: Listening for intracluster connections on port 29015
+2017-01-31T12:48:40.032570802 0.027633s notice: Listening for client driver connections on port 28015
+2017-01-31T12:48:40.032570803 0.027810s notice: Listening for administrative HTTP connections on port 8080
+2017-01-31T12:48:40.032570804 0.028141s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-01-31T12:48:40.032570805 0.028495s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-01-31T12:48:40.032570806 0.028705s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-01-31T12:48:40.032570807 0.028708s notice: Server ready, "OSP3355_ljd" 55770e3f-e00e-4cfc-b6a9-259adce3a509
+2017-01-31T13:08:04.440570900 1164.424461s info: Table 7f13ae5a-a597-451b-bcea-b113b75179f8: Starting a new Raft election for term 1.
+2017-01-31T13:08:04.440570901 1164.426627s info: Table 7f13ae5a-a597-451b-bcea-b113b75179f8: Added replica on this server.
+2017-01-31T13:08:04.440570902 1164.430195s info: Table 7f13ae5a-a597-451b-bcea-b113b75179f8: This server is Raft leader for term 1. Latest log index is 0.
+2017-01-31T13:10:37.701668200 1317.682906s notice: Removing file C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data\\7f13ae5a-a597-451b-bcea-b113b75179f8
+2017-01-31T13:10:37.701668201 1317.682913s info: Table 7f13ae5a-a597-451b-bcea-b113b75179f8: Deleted the table.
+2017-01-31T13:12:43.466358500 1443.453735s info: Table cddbe3a0-ba1a-44c3-8963-a933fcf1abf0: Starting a new Raft election for term 1.
+2017-01-31T13:12:43.466358501 1443.453977s info: Table cddbe3a0-ba1a-44c3-8963-a933fcf1abf0: Added replica on this server.
+2017-01-31T13:12:43.466358502 1443.456841s info: Table cddbe3a0-ba1a-44c3-8963-a933fcf1abf0: This server is Raft leader for term 1. Latest log index is 0.
+2017-01-31T13:50:28.964107700 3708.935319s info: Table cddbe3a0-ba1a-44c3-8963-a933fcf1abf0: Configuration is changing.
+2017-01-31T13:52:39.299921300 3839.270861s notice: Removing file C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data\\cddbe3a0-ba1a-44c3-8963-a933fcf1abf0
+2017-01-31T13:52:39.299921301 3839.270866s info: Table cddbe3a0-ba1a-44c3-8963-a933fcf1abf0: Deleted the table.
+2017-01-31T13:52:45.652807700 3845.624264s info: Table ece899ea-d15d-4ef7-8eb6-99c71b0690e2: Starting a new Raft election for term 1.
+2017-01-31T13:52:45.652807701 3845.624414s info: Table ece899ea-d15d-4ef7-8eb6-99c71b0690e2: Added replica on this server.
+2017-01-31T13:52:45.652807702 3845.627477s info: Table ece899ea-d15d-4ef7-8eb6-99c71b0690e2: This server is Raft leader for term 1. Latest log index is 0.
+2017-01-31T13:56:15.685435400 4055.667511s info: Table ece899ea-d15d-4ef7-8eb6-99c71b0690e2: Configuration is changing.
+2017-01-31T13:56:32.004804100 4071.975238s notice: Removing file C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data\\ece899ea-d15d-4ef7-8eb6-99c71b0690e2
+2017-01-31T13:56:32.004804101 4071.975245s info: Table ece899ea-d15d-4ef7-8eb6-99c71b0690e2: Deleted the table.
+2017-01-31T13:56:36.250079600 4076.228133s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Starting a new Raft election for term 1.
+2017-01-31T13:56:36.250079601 4076.228349s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Added replica on this server.
+2017-01-31T13:56:36.250079602 4076.230684s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: This server is Raft leader for term 1. Latest log index is 0.
+2017-01-31T13:58:28.208611200 4188.178214s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:01:41.153012300 4381.122024s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:05:25.222711000 4605.191570s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:05:27.082965300 4607.051676s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:05:36.222439600 4616.191137s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:05:39.328653200 4619.297368s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:07:34.917756900 4734.885659s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:28:56.298406400 6016.261172s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:49:52.750361000 7272.707532s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:51:37.782555500 7377.739419s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:52:46.811917000 7446.769178s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:52:55.758370700 7455.715588s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-01-31T14:53:03.477042900 7463.433988s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T14:03:10.108622800 90869.922385s notice: Server got Control-C; shutting down...
+2017-02-01T14:03:10.108622801 90869.922673s notice: Shutting down client connections...
+2017-02-01T14:03:10.108622802 90869.923294s notice: All client connections closed.
+2017-02-01T14:03:10.108622803 90869.923299s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-01T14:03:10.108622804 90869.929601s notice: Storage engine shut down.

@@ -1,3 +1,5 @@
+#include <SimpleDHT.h>
+
 #include <ESP8266WiFi.h>
 #include <WebSocketClient.h>
 extern "C" {
@@ -6,10 +8,14 @@ extern "C" {
  
 const char* ssid = "FRITZ!Box 7490";
 const char* password = "xxx";
-char wiFiHostname[ ] = "ESPBalkon";
+char wiFiHostname[ ] = "Kinderzimmer";
 char path[] = "/";
 char host[] = "echo.websocket.org";
 int i = 0;
+
+int pinDHT11 = 2;
+SimpleDHT11 dht11;
+
  
 WebSocketClient webSocketClient;
  
@@ -41,7 +47,7 @@ void setup() {
   Serial.println(WiFi.hostname());
  
   // Connect to the websocket server
-  if (client.connect("echo.websocket.org", 80)) {
+  if (client.connect("minibian", 1337)) {
     Serial.println("Connected");
   } else {
     Serial.println("Connection failed.");
@@ -55,6 +61,7 @@ void setup() {
   webSocketClient.host = host;
   if (webSocketClient.handshake(client)) {
     Serial.println("Handshake successful");
+    webSocketClient.sendData(WiFi.hostname());
   } else {
     Serial.println("Handshake failed.");
     while (1) {
@@ -65,7 +72,17 @@ void setup() {
  
 void loop() {
   String data;
- 
+  byte temperature = 0;
+  byte humidity = 0;
+
+  if (dht11.read(pinDHT11, &temperature, &humidity, NULL)) {
+    Serial.print("Read DHT11 failed.");
+    return;
+  }
+  Serial.print("Sample OK: ");
+  Serial.print((int)temperature); Serial.print(" *C, "); 
+  Serial.print((int)humidity); Serial.println(" %");
+
   if (client.connected()) {
     webSocketClient.getData(data);
     if (data.length() > 0) {
@@ -74,7 +91,8 @@ void loop() {
     }
     // capture the value of analog 1, send it along
     //pinMode(1, INPUT);
-    data = String(i);
+    data = "{\"type\":\"SensorTherm\",\"data\":{\"time\":\"2017-01-02T21:22:18.676Z\",\"sensor\":\""+WiFi.hostname()+"\",\"temp\":"+temperature+",\"humidity\":"+humidity+"}}";
+    Serial.println(data);
     webSocketClient.sendData(data);
   } else {
     Serial.println("Client disconnected.");
@@ -86,3 +104,4 @@ void loop() {
   i ++;
   delay(3000);
 }
+ 

@@ -5,6 +5,7 @@
   "main": "temp.js",
   "dependencies": {
     "node-dht-sensor": "^0.0.32",
+    "rethinkdb": "^2.3.3",
     "websocket": "^1.0.24"
   },
   "devDependencies": {},
