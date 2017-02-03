@@ -18,6 +18,12 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include="BAR_Chart.html" />
+    <None Include="bundleconfig.json" />
+    <Content Include="BAR_Chart.min.html">
+      <SubType>Content</SubType>
+      <DependentUpon>BAR_Chart.html</DependentUpon>
+    </Content>
     <Content Include="SmartHome Zentrale2.html" />
     <Content Include="StyleSheet.css" />
     <Content Include="package.json" />

@@ -95,7 +95,7 @@ socket.on('request', function(request) {
             } else if (o.type == "SensorTherm") {
                 var json = JSON.stringify({ type: 'SensorTherm', data: o.data });
                 if (db_da) {
-                    r.db('SmartHome').table('Temps').insert(o).run(rcon, function (err, result) {
+                    r.db('SmartHome').table('Temps').insert(o.data).run(rcon, function (err, result) {
                         if (err) throw err;
                         //console.log(JSON.stringify(result, null, 2));
                     });
@@ -113,7 +113,7 @@ socket.on('request', function(request) {
             } else if (o.type == "Fake") {
                 var json = JSON.stringify({ type: 'Fake', data: o.data });
                 if (db_da) {
-                    r.db('SmartHome').table('Temps').insert(o).run(rcon, function (err, result) {
+                    r.db('SmartHome').table('Temps').insert(o.data).run(rcon, function (err, result) {
                         if (err) throw err;
                         //console.log(JSON.stringify(result, null, 2));
                     });

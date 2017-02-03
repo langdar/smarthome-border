@@ -114,3 +114,30 @@
 2017-02-01T14:03:10.108622802 90869.923294s notice: All client connections closed.
 2017-02-01T14:03:10.108622803 90869.923299s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2017-02-01T14:03:10.108622804 90869.929601s notice: Storage engine shut down.
+2017-02-01T14:06:34.117881500 0.011393s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2017-02-01T14:06:34.117881501 0.011513s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2017-02-01T14:06:34.117881502 0.012120s notice: Loading data from directory C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data
+2017-02-01T14:06:34.149085300 0.037695s info: Automatically using cache size of 4878 MB
+2017-02-01T14:06:34.149085301 0.041156s notice: Listening for intracluster connections on port 29015
+2017-02-01T14:06:34.164713900 0.053311s notice: Listening for client driver connections on port 28015
+2017-02-01T14:06:34.164713901 0.053490s notice: Listening for administrative HTTP connections on port 8080
+2017-02-01T14:06:34.164713902 0.054050s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-02-01T14:06:34.164713903 0.054639s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-02-01T14:06:34.164713904 0.054791s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.213.130.204, fe80::25fa:4a65:db2d:e100%4, fe80::41a8:edc9:2995:5b60%2
+2017-02-01T14:06:34.164713905 0.054793s notice: Server ready, "OSP3355_ljd" 55770e3f-e00e-4cfc-b6a9-259adce3a509
+2017-02-01T14:06:35.212832000 1.096171s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Starting a new Raft election for term 2.
+2017-02-01T14:06:35.212832001 1.103787s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: This server is Raft leader for term 2. Latest log index is 14.
+2017-02-01T14:09:26.211620800 172.095384s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T14:13:50.609645800 436.492808s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T14:14:06.916713600 452.800365s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T14:14:10.244536900 456.127717s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T14:14:12.563913700 458.447016s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T14:25:11.699775200 1117.582902s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T14:25:31.716618600 1137.600123s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T15:29:04.049929700 4949.923110s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-01T15:31:02.346782200 5068.219377s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Configuration is changing.
+2017-02-03T08:58:59.014753200 154344.549952s notice: Server got Control-C; shutting down...
+2017-02-03T08:58:59.014753201 154344.551930s notice: Shutting down client connections...
+2017-02-03T08:58:59.014753202 154344.552167s notice: All client connections closed.
+2017-02-03T08:58:59.014753203 154344.552170s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-02-03T08:58:59.030574400 154344.565208s notice: Storage engine shut down.

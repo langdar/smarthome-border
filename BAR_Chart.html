@@ -1,0 +1,160 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+
+
+    <style type="text/css">
+        body {
+            font: 6px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        .bar {
+            fill: orange;
+        }
+
+            .bar:hover {
+                fill: orangered;
+            }
+
+        .x.axis path {
+            display: none;
+        }
+
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+        }
+
+            /* Creates a small triangle extender for the tooltip */
+            .d3-tip:after {
+                box-sizing: border-box;
+                display: inline;
+                font-size: 10px;
+                width: 100%;
+                line-height: 1;
+                color: rgba(0, 0, 0, 0.8);
+                content: "\25BC";
+                position: absolute;
+                text-align: center;
+            }
+
+            /* Style northward tooltips differently */
+            .d3-tip.n:after {
+                margin: -1px 0 0 0;
+                top: 100%;
+                left: 0;
+            }
+    </style>
+
+    <title>Simple Bar chart</title>
+
+
+
+
+
+
+
+    <script type='text/javascript'>
+//<![CDATA[
+window.onload=function(){
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
+    width = 80 - margin.left - margin.right,
+    height = 50 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var parseDate = d3.time.format("%Y-%m-%dT%H:%M:%S").parse;
+var data = JSON.parse(document.getElementById('data').innerHTML);
+data.forEach(function(d) {
+        d.time = parseDate(d.time);
+        d.temp = +d.temp;
+    });
+  x.domain(data.map(function(d) { return d.time; }));
+  y.domain([d3.min(data, function(d) { return d.temp; })-1, d3.max(data, function(d) { return d.temp; })+1]);
+
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.time); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.temp); })
+      .attr("height", function(d) { return height - y(d.temp); })
+
+
+}//]]>
+
+    </script>
+
+
+</head>
+
+<body>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+    <script type="application/json" id="data">
+        [{"humidity":0,"id":"fd41512a-bf45-48d2-af37-a0a7fbd6b0c0","sensor":"Fake","temp":25.705419750884175,"time":"2017-02-01T14:30:27"},{"humidity":0,"id":"2630fdec-f554-4c27-b9f4-0a70beaf9dc2","sensor":"Fake","temp":29.896389385685325,"time":"2017-02-01T14:30:26"},{"humidity":0,"id":"dc87cb50-e809-4a2c-884f-4307d4d3215a","sensor":"Fake","temp":26.258010847959667,"time":"2017-02-01T14:30:25"},{"humidity":0,"id":"f54ab52e-595c-4e6b-8285-69ff5204ad84","sensor":"Fake","temp":24.356069583445787,"time":"2017-02-01T14:30:24"},{"humidity":0,"id":"ee17f4fe-8008-4a31-bf7b-a36835a2e68e","sensor":"Fake","temp":23.12699674628675,"time":"2017-02-01T14:30:23"}]
+    </script>
+
+    <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "None"
+    }], "*")
+  }
+    </script>
+
+</body>
+
+</html>
