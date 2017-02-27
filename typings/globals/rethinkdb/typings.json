@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/583d6f8c2d8e0ae195f1e772a09f5a31aab59bc7/rethinkdb/index.d.ts",
+    "raw": "registry:dt/rethinkdb#2.3.0+20170207211247",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/583d6f8c2d8e0ae195f1e772a09f5a31aab59bc7/rethinkdb/index.d.ts"
+  }
+}

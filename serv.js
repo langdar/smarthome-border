@@ -117,6 +117,7 @@ socket.on('request', function(request) {
                         if (err) throw err;
                         //console.log(JSON.stringify(result, null, 2));
                     });
+                    r.db('SmartHome').table('Temps').orderBy(r.desc('time')).limit(1).run(err, result);
                 }
                 for (var i = 0; i < clients.length; i++) {
                     clients[i].sendUTF(json);
