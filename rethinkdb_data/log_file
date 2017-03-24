@@ -179,3 +179,22 @@
 2017-03-24T08:49:15.849308802 70717.106207s notice: All client connections closed.
 2017-03-24T08:49:15.849308803 70717.106214s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2017-03-24T08:49:15.864932000 70717.131904s notice: Storage engine shut down.
+2017-03-24T10:02:54.419883000 0.013380s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2017-03-24T10:02:54.419883001 0.013562s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2017-03-24T10:02:54.419883002 0.013703s notice: Loading data from directory C:\\Users\\dirlange\\Source\\Repos\\smarthome-border\\rethinkdb_data
+2017-03-24T10:02:54.419883003 0.025274s info: Automatically using cache size of 3872 MB
+2017-03-24T10:02:54.435508900 0.028287s notice: Listening for intracluster connections on port 29015
+2017-03-24T10:02:54.451135700 0.049575s notice: Listening for client driver connections on port 28015
+2017-03-24T10:02:54.451135701 0.049817s notice: Listening for administrative HTTP connections on port 8080
+2017-03-24T10:02:54.451135702 0.049819s notice: Listening on cluster address: 127.0.0.1
+2017-03-24T10:02:54.451135703 0.049820s notice: Listening on driver address: 127.0.0.1
+2017-03-24T10:02:54.451135704 0.049828s notice: Listening on http address: 127.0.0.1
+2017-03-24T10:02:54.451135705 0.049829s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-03-24T10:02:54.451135706 0.049830s notice: Server ready, "OSP3355_ljd" 55770e3f-e00e-4cfc-b6a9-259adce3a509
+2017-03-24T10:02:55.764034200 1.354805s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: Starting a new Raft election for term 5.
+2017-03-24T10:02:55.764034201 1.360194s info: Table c8270ee1-f4c2-4681-a3ed-89ea1fd61b70: This server is Raft leader for term 5. Latest log index is 32.
+2017-03-24T11:37:39.561979300 5685.112486s notice: Server got Control-C; shutting down...
+2017-03-24T11:37:39.561979301 5685.112761s notice: Shutting down client connections...
+2017-03-24T11:37:39.561979302 5685.113346s notice: All client connections closed.
+2017-03-24T11:37:39.561979303 5685.113352s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-03-24T11:37:39.577448200 5685.128475s notice: Storage engine shut down.

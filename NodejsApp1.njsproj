@@ -28,7 +28,7 @@
     <Content Include="StyleSheet.css" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Compile Include="sClient.js" />
+    <Compile Include="sClient2.js" />
     <Compile Include="serv.js" />
     <Compile Include="sonosClient2.js" />
     <Compile Include="tClient.js" />
