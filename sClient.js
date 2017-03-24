@@ -30,14 +30,15 @@ client.on('connect', function (connection) {
     function sendNumber() {
         if (connection.connected) {
             t = Math.random() * (30 - 20) + 20;
+            t = t.toFixed(1);
             var o = {
                 time: (new Date()),
-                sensor: "Fake",
+                sensor: "Zentrale",
                 temp: t,
                 humidity: h
             }
             //console.log(o);
-            connection.sendUTF(JSON.stringify({ type: 'Fake', data: o }));
+            connection.sendUTF(JSON.stringify({ type: 'SensorTherm', data: o }));
             setTimeout(sendNumber, 1000);
         }
     }

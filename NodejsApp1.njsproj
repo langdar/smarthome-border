@@ -24,7 +24,7 @@
       <SubType>Content</SubType>
       <DependentUpon>BAR_Chart.html</DependentUpon>
     </Content>
-    <Content Include="SmartHome Zentrale2.html" />
+    <Content Include="SmartHome Zentrale_Neu.html" />
     <Content Include="StyleSheet.css" />
     <Content Include="package.json" />
     <Content Include="README.md" />
