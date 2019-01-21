@@ -2,17 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache">
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color: #000000">
     <script type="text/javascript">
         var content = document.getElementById('content');
         var w = document.getElementById('w');
         //var socket = new WebSocket('ws://192.168.178.49:1337');
-        //var socket = new WebSocket('ws://minibian:1337');
-        var socket = new WebSocket('ws://localhost:1337');
+        var socket = new WebSocket('ws://minibian:1337');
+        //var socket = new WebSocket('ws://localhost:1337');
         socket.onopen = function () {
             socket.send("Test");
             console.log('WebSocket open...');
@@ -67,6 +68,9 @@
             } else if (o.type == "Sonos") {
                 son.innerHTML = '<img src="' + o.data.aa + '">';
                 sont.innerHTML = o.data.a + '<br>' + o.data.t;
+            } else if (o.type == "ForeCast") {
+                //son.innerHTML = '<img src="' + o.data.aa + '">';
+                sont.innerHTML = '<img src="' + o.data.aa + '"><br>'+o.data.al + '<br>'+o.data.a;
             }
         };
 
@@ -88,7 +92,7 @@
     <div id="son" class="Cover" style="z-index:1;left: 300px;top: 100px;position: absolute;height: 400px;width: 400px">
         TTT
     </div>
-    <div id="sont" class="Zeit" style="z-index:1;left: 300px;top: 510px;position: absolute;height: 50px;width: 400px">
+    <div id="sont" class="Forecast" style="z-index:1;left: 300px;top: 510px;position: absolute;height: 100px;width: 100px">
         TTT
     </div>
 </body>

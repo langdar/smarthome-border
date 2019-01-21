@@ -44,6 +44,21 @@ body {
     padding: 5px;
 }
 
+.Forecast {
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+    padding: 0px;
+}
+
 .Cover {
     font-family: Roboto;
     font-size: 20px;

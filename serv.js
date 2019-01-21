@@ -6,7 +6,7 @@ var db_da = false;
 
 /**
  * Verbinden wir uns doch erst mal zur Rethinkdb-Instanz auf localhost
- * Wenn das geht, schreiben wir später alle Daten da rein und holen uns den aktuellsten wert jeweils aus der Datenbank
+ * Wenn das geht, schreiben wir spï¿½ter alle Daten da rein und holen uns den aktuellsten wert jeweils aus der Datenbank
  * sonst geben wir alles direkt weiter
  */
 var rcon = null;
@@ -94,6 +94,7 @@ socket.on('request', function(request) {
               }
             } else if (o.type == "SensorTherm") {
                 var json = JSON.stringify({ type: 'SensorTherm', data: o.data });
+		//o.data.temp = o.data.temp.toFixed(1);
                 if (db_da) {
                     r.db('SmartHome').table('Temps').insert(o.data).run(rcon, function (err, result) {
                         if (err) throw err;
@@ -110,6 +111,12 @@ socket.on('request', function(request) {
                     clients[i].sendUTF(json);
                 }
                 console.log("Sonos data send...");
+            } else if (o.type == "ForeCast") {
+                var json = JSON.stringify({type: 'ForeCast', data: o.data});
+                for (var i=0; i < clients.length; i++) {
+                    clients[i].sendUTF(json);
+                }
+                console.log("Forecast data send...");
             } else if (o.type == "Fake") {
                 var json = JSON.stringify({ type: 'Fake', data: o.data });
                 if (db_da) {
