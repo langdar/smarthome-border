@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <title>SmartHome Zentrale</title>
+  <meta name="generator" content="Google Web Designer 1.7.0.1114">
+  <style type="text/css" id="gwd-text-style">p {
+    margin: 0px;
+}
+h1 {
+    margin: 0px;
+}
+h2 {
+    margin: 0px;
+}
+h3 {
+    margin: 0px;
+}</style>
+  <style type="text/css">html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+body {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    perspective: 1400px;
+    -webkit-perspective: 1400px;
+    -moz-perspective: 1400px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    background-image: none;
+    background-color: rgb(0, 0, 0);
+}
+.gwd-p-1m2n {
+    position: absolute;
+    left: 36px;
+    top: 31px;
+    font-family: Roboto;
+    transform-origin: 52.8387px 20.8333px 0px;
+    -webkit-transform-origin: 52.8387px 20.8333px 0px;
+    -moz-transform-origin: 52.8387px 20.8333px 0px;
+    height: 25px;
+    width: 200px;
+}
+.gwd-p-115j {
+    color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    top: 100px;
+    left: 50px;
+    padding: 10px;
+}
+.gwd-span-r9ok {
+    position: absolute;
+    height: 43px;
+    font-family: Roboto;
+    font-weight: bold;
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 36px;
+    width: 446px;
+    transform-origin: 224px 22.5px 0px;
+    -webkit-transform-origin: 224px 22.5px 0px;
+    -moz-transform-origin: 224px 22.5px 0px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    left: 20px;
+    top: 32px;
+    background-image: none;
+    background-color: rgb(0, 0, 0);
+}
+.gwd-p-16ha {
+    left: 20px;
+}
+.gwd-p-tzob {
+    width: 100px;
+    height: 55px;
+    transform-origin: 367.8px -16.8125px 0px;
+    -webkit-transform-origin: 367.8px -16.8125px 0px;
+    -moz-transform-origin: 367.8px -16.8125px 0px;
+    font-size: 36px;
+    top: 239px;
+}
+.gwd-p-mcy8 {
+    width: 100px;
+    left: 142px;
+    transform-origin: 52.8281px 49.1898px 0px;
+    -webkit-transform-origin: 52.8281px 49.1898px 0px;
+    -moz-transform-origin: 52.8281px 49.1898px 0px;
+    height: 90px;
+    top: 297px;
+}
+.gwd-p-16iz {
+    width: 222px;
+    transform-origin: 58.0633px 20.8281px 0px;
+    -webkit-transform-origin: 58.0633px 20.8281px 0px;
+    -moz-transform-origin: 58.0633px 20.8281px 0px;
+    top: 192px;
+}
+.gwd-p-1m03 {
+    transform-origin: 194.8px 49.1875px 0px;
+    -webkit-transform-origin: 194.8px 49.1875px 0px;
+    -moz-transform-origin: 194.8px 49.1875px 0px;
+    left: 20px;
+    top: 97px;
+    width: 222px;
+    height: 50px;
+}
+.gwd-span-1026 {
+    font-size: 48px;
+}
+.gwd-p-1r89 {
+    font-size: 40px;
+    height: 55px;
+    top: 239px;
+}
+.gwd-p-12vb {
+    width: 400px;
+    left: 350px;
+    height: 400px;
+}</style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+</head>
+
+<body class="htmlNoPages">
+  <span class="gwd-span-r9ok" id="Ueberschrift">Dirks SmartHome Zentrale</span>
+  <p class="gwd-p-1m2n gwd-p-115j gwd-p-16ha gwd-p-16iz" id="zv">Zimmer:</p>
+  <p class="gwd-p-1m2n gwd-p-115j gwd-p-16ha gwd-p-tzob" id="temp">-1</p>
+  <p class="gwd-p-1m2n gwd-p-115j gwd-p-16ha gwd-p-mcy8 gwd-p-1r89" id="hum">00 %</p>
+  <script type="text/javascript">
+    var content = document.getElementById('content');
+    var w = document.getElementById('w');
+     //var socket = new WebSocket('ws://192.168.178.49:1337');
+    var socket = new WebSocket('ws://minibian:1337');
+    socket.onopen = function() {
+      socket.send("Test");
+    };
+
+    socket.push = function(msg) {
+      var o = {
+        text: msg
+      };
+      socket.send(JSON.stringify({
+        type: 'Message',
+        data: msg
+      }));
+    }
+
+    socket.onmessage = function(message) {
+      //jv.value = message.data ;
+      var o = JSON.parse(message.data);
+      if (o.type == "SensorTherm") {
+        var dt = new Date(o.data.time);
+        var day = ('0' + dt.getDate()).slice(-2);
+        var month = ('0' + (dt.getMonth() + 1)).slice(-2);
+        var year = dt.getFullYear();
+        var hour = ('0' + dt.getHours()).slice(-2);
+        var minute = ('0' + dt.getMinutes()).slice(-2);
+        var second = ('0' + dt.getSeconds()).slice(-2);
+        zv.innerHTML = o.data.sensor;
+        //z.innerHTML = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+        z.innerHTML = day + '.' + month + '.' + year + '<br>' + hour + ':' + minute + ':' + second;
+        temp.innerHTML = o.data.temp + ' \xB0C';
+        hum.innerHTML = o.data.humidity + ' %';
+      }
+    };
+
+    socket.onerror = function(error) {
+      console.log('WebSocket error: ' + error);
+    };
+  </script>
+  <p class="gwd-p-1m2n gwd-p-115j gwd-p-16ha gwd-p-mcy8 gwd-p-1m03" id="z"><span class="gwd-span-1026">Uhrzeit</span><br>
+    
+  </p>
+  <p class="gwd-p-1m2n gwd-p-115j gwd-p-16ha gwd-p-mcy8 gwd-p-1m03 gwd-p-12vb" id="z_1"><span class="gwd-span-1026">Uhrzeit</span><br>
+    
+  </p>
+
+
+</body></html>

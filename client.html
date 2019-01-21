@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="de">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Websocket Client</title>
+  </head>
+  <body>
+  <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg .tg-yw4l{vertical-align:top}
+    .tg .tg-14pc{font-size:11px;font-family:Tahoma, Geneva, sans-serif !important;;text-align:right;vertical-align:top}
+  </style>
+    <table  class="tg">
+      <tr>
+        <td>Sensor</td><td class="tg-14pc"><input type="text" id="uName" style="text-align:center;border:0px"/></td>
+      </tr>
+      <tr>
+        <td>Zeit</td><td class="tg-14pc"><input type="text" enabled=false id="tv" style="text-align:center;border:0px"/></td>
+      </tr>
+      <tr>
+        <td>Temperatur</td><td class="tg-14pc"><input type="text" id="fTemp" style="text-align:center;border:0px"/></td>
+      </tr>
+      <tr>
+        <td>Luftfeuchtigkeit</td><td class="tg-14pc"><input type="text" enabled=false id="fHum" style="text-align:center;border:0px"/></td>
+      </tr>
+    </table>
+    <div id="w">
+    </div>
+    <input type="hidden" id="Clientname" value="Gott">
+    <br>
+    <label>Message:  </label><input type="text" id="dla">
+    <br>
+    <label>JSON:</label><input id="jv" type="text" value="" />
+    <div id="content">
+
+            <input id="Button1" type="button" value="Push" onClick="socket.push(dla.value);"/>
+            <br>
+    </div>
+
+
+      <script type="text/javascript">
+          var content = document.getElementById('content');
+          var w = document.getElementById('w');
+          //var socket = new WebSocket('ws://192.168.178.49:1337');
+          var socket = new WebSocket('ws://minibian:1337');
+          socket.onopen = function () {
+              socket.send(Clientname.value);
+          };
+
+          socket.push = function (msg) {
+            var o = {text:msg};
+            socket.send(JSON.stringify({ type: 'Message', data: msg }));
+          }
+
+          socket.onmessage = function (message) {
+              //jv.value = message.data ;
+              var o = JSON.parse(message.data);
+              if (o.type == "color") {
+                uName.style.backgroundColor = o.data;
+                tv.value ="Color";
+              } else if (o.type == "SensorTherm") {
+                var dt = new Date(o.data.time);
+                var day = ('0' + dt.getDate()).slice(-2);
+                var month = ('0' + (dt.getMonth() + 1)).slice(-2);
+                var year = dt.getFullYear();
+                var hour = ('0' + dt.getHours()).slice(-2);
+                var minute = ('0' + dt.getMinutes()).slice(-2);
+                var second = ('0' + dt.getSeconds()).slice(-2);
+                uName.value = o.data.sensor;
+                uName.style.backgroundColor = "white";
+                tv.value = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+                fTemp.value = o.data.temp + ' \xB0C';
+                fHum.value = o.data.humidity +' %';
+
+                jv.value = o.data;
+
+              }
+          };
+
+          socket.onerror = function (error) {
+              console.log('WebSocket error: ' + error);
+          };
+      </script>
+  </body>
+</html>
