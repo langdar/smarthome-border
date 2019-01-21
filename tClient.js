@@ -35,8 +35,8 @@ client.on('connect', function(connection) {
                 'humidity: ' + humidity.toFixed(1) + '%'
                 );
               }
-	            t = temperature;
-	            h = humidity;
+	            t = temperature-2;
+	            h = humidity+20;
             });
             c = 0;
           }
